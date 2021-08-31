@@ -24,17 +24,17 @@ write_basic_package_version_file(
   )
 
 if(NOT FCLIB_HEADER_ONLY)
-message("CREATE ${CMAKE_CURRENT_BINARY_DIR}/fclib-targets.cmake")
+message("CREATE ${CMAKE_CURRENT_BINARY_DIR}/fclibTargets.cmake")
 
 get_property(result DIRECTORY PROPERTY BUILDSYSTEM_TARGETS )
 message("result is ${result}")
   export(EXPORT fclibTargets
-    FILE "${CMAKE_CURRENT_BINARY_DIR}/fclib-targets.cmake"
+    FILE "${CMAKE_CURRENT_BINARY_DIR}/fclibTargets.cmake"
     NAMESPACE FCLIB::
     )
-    if(EXISTS ${CMAKE_CURRENT_BINARY_DIR}/fclib-targets.cmake  )
+    if(EXISTS ${CMAKE_CURRENT_BINARY_DIR}/fclibTargets.cmake  )
       message("FILE IS THERE !!!")
-      file(READ ${CMAKE_CURRENT_BINARY_DIR}/fclib-targets.cmake TMPFILE )
+      file(READ ${CMAKE_CURRENT_BINARY_DIR}/fclibTargets.cmake TMPFILE )
       message("FILE IS ${TMPFILE}")
    
     else()
@@ -45,9 +45,9 @@ message("result is ${result}")
     NAMESPACE FCLIB::
     DESTINATION ${ConfigPackageLocation}) 
 endif()
-if(EXISTS ${CMAKE_CURRENT_BINARY_DIR}/fclib-targets.cmake  )
+if(EXISTS ${CMAKE_CURRENT_BINARY_DIR}/fclibTargets.cmake  )
 message("FILE 111 IS THERE !!!")
-file(READ ${CMAKE_CURRENT_BINARY_DIR}/fclib-targets.cmake TMPFILE )
+file(READ ${CMAKE_CURRENT_BINARY_DIR}/fclibTargets.cmake TMPFILE )
 message("FILE I 111 S ${TMPFILE}")
   
 else()
@@ -59,17 +59,6 @@ endif()
 install(
   FILES ${CMAKE_CURRENT_BINARY_DIR}/fclib-config.cmake ${CMAKE_CURRENT_BINARY_DIR}/fclib-config-version.cmake
   DESTINATION ${ConfigPackageLocation})
-
-  if(EXISTS ${CMAKE_CURRENT_BINARY_DIR}/fclib-targets.cmake  )
-  message("FILE IS THERE !!!")
-  file(READ ${CMAKE_CURRENT_BINARY_DIR}/fclib-targets.cmake TMPFILE )
-  message("FILE I 11223231 S ${TMPFILE}")
-  
-else()
-message("PERD111233211 I!!!")
-endif() 
-
-
 
 # pkg-config file
 if(NOT SKIP_PKGCONFIG)
