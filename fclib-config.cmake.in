@@ -45,7 +45,7 @@ set(ConfigPackageLocation @ConfigPackageLocation@)
 # set(${PACKAGE_NAME}_EXTERNAL_LIBRARIES "@FCLIB_LINK_LIBRARIES@")
 
 # include fclib project targets
-include("${CMAKE_CURRENT_LIST_DIR}/fclibTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/fclib-targets.cmake")
 
 set_and_check(FCLIB_INCLUDE_DIR "@CMAKE_INSTALL_PREFIX@/include")
 
