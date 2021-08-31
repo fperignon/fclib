@@ -24,14 +24,14 @@ write_basic_package_version_file(
   )
 
 if(NOT FCLIB_HEADER_ONLY)
-message("CREATE ${CMAKE_CURRENT_BINARY_DIR}/fclibTargets.cmake")
+message("CREATE ${CMAKE_CURRENT_BINARY_DIR}/fclib-targets.cmake")
 
 
   export(EXPORT fclibTargets
-    FILE "${CMAKE_CURRENT_BINARY_DIR}/fclibTargets.cmake"
+    FILE "${CMAKE_CURRENT_BINARY_DIR}/fclib-targets.cmake"
     NAMESPACE FCLIB::
     )
-    file(READ ${CMAKE_CURRENT_BINARY_DIR}/fclibTargets.cmake TMPFILE )
+    file(READ ${CMAKE_CURRENT_BINARY_DIR}/fclib-targets.cmake TMPFILE )
     message("FILE IS ${TMPFILE}")
  
  

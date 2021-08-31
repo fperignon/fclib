@@ -34,10 +34,10 @@ endif()
 # ------- FCLib setup -------
 
 # User defined options
-option(FCLIB_WITH_MERIT_FUNCTIONS "enable merit functions. Default = ON" OFF)
-option(FCLIB_HEADER_ONLY "static interface. Default = ON" OFF)
+option(FCLIB_WITH_MERIT_FUNCTIONS "enable merit functions. Default = OFF" OFF)
+option(FCLIB_HEADER_ONLY "static interface. Default = OFF" OFF)
 option(VERBOSE_MODE "enable verbose mode for cmake exec. Default = ON" ON)
-option(USE_MPI "compile and link fclib with mpi when this mode is enable. Default = ON" OFF)
+option(USE_MPI "compile and link fclib with mpi when this mode is enable. Default = OFF" OFF)
 option(BUILD_SHARED_LIBS "Enable dynamic library build, default = ON" ON)
 option(WITH_TESTS "Enable testing. Default = ON" ON)
 option(FORCE_SKIP_RPATH "Do not build shared libraries with rpath. Useful only for packaging. Default = OFF" OFF)
@@ -221,9 +221,9 @@ if(WITH_TESTS)
 endif()
 
 
-message(STATUS "====================== Summary ======================")
+message(STATUS "====================== Summary of fclib config ======================")
 message(STATUS " Compiler : ${CMAKE_C_COMPILER}")
-message(STATUS " Sources are in : ${CMAKE_SOURCE_DIR}")
+message(STATUS " Sources are in : ${CMAKE_CURRENT SOURCE_DIR}")
 message(STATUS " Project uses MPI : ${USE_MPI}")
 message(STATUS " Project uses HDF5 : ${HDF5_LIBRARIES}")
 message(STATUS " Project will be installed in ${CMAKE_INSTALL_PREFIX}")
