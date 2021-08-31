@@ -7,11 +7,12 @@
 #
 # Set minimum version for cmake
 # We advise 3.12 at least, but 3.7 is authorized since it's the default version on current debian stable.
-cmake_minimum_required(VERSION 3.7)
+cmake_minimum_required(VERSION 3.10)
 
 # policy https://cmake.org/cmake/help/git-stage/policy/CMP0074.html
 if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.12")
   cmake_policy(SET CMP0074 NEW)
+  cmake_policy(SET CMP0067 NEW)
 endif()
 
 # Set cmake modules directory (i.e. the one which contains all
