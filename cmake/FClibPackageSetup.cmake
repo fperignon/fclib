@@ -38,18 +38,36 @@ message("result is ${result}")
       message("FILE IS ${TMPFILE}")
    
     else()
-    message("PERDI!!!")
- endif() 
+      message("PERDI!!!")
+  endif() 
  
   install(EXPORT fclibTargets
     NAMESPACE FCLIB::
     DESTINATION ${ConfigPackageLocation}) 
 endif()
+if(EXISTS ${CMAKE_CURRENT_BINARY_DIR}/fclib-targets.cmake  )
+message("FILE 111 IS THERE !!!")
+file(READ ${CMAKE_CURRENT_BINARY_DIR}/fclib-targets.cmake TMPFILE )
+message("FILE I 111 S ${TMPFILE}")
+  
+else()
+message("PERD1111 I!!!")
+endif() 
+
 
 # install config files
 install(
   FILES ${CMAKE_CURRENT_BINARY_DIR}/fclib-config.cmake ${CMAKE_CURRENT_BINARY_DIR}/fclib-config-version.cmake
   DESTINATION ${ConfigPackageLocation})
+
+  if(EXISTS ${CMAKE_CURRENT_BINARY_DIR}/fclib-targets.cmake  )
+  message("FILE IS THERE !!!")
+  file(READ ${CMAKE_CURRENT_BINARY_DIR}/fclib-targets.cmake TMPFILE )
+  message("FILE I 11223231 S ${TMPFILE}")
+  
+else()
+message("PERD111233211 I!!!")
+endif() 
 
 
 
