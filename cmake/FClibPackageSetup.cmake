@@ -32,9 +32,14 @@ message("result is ${result}")
     FILE "${CMAKE_CURRENT_BINARY_DIR}/fclib-targets.cmake"
     NAMESPACE FCLIB::
     )
-    file(READ ${CMAKE_CURRENT_BINARY_DIR}/fclib-targets.cmake TMPFILE )
-    message("FILE IS ${TMPFILE}")
- 
+    if(EXISTS ${CMAKE_CURRENT_BINARY_DIR}/fclib-targets.cmake  )
+      message("FILE IS THERE !!!")
+      file(READ ${CMAKE_CURRENT_BINARY_DIR}/fclib-targets.cmake TMPFILE )
+      message("FILE IS ${TMPFILE}")
+   
+    else()
+    message("PERDI!!!")
+ endif() 
  
   install(EXPORT fclibTargets
     NAMESPACE FCLIB::
