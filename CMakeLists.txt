@@ -223,7 +223,7 @@ endif()
 
 message(STATUS "====================== Summary of fclib config ======================")
 message(STATUS " Compiler : ${CMAKE_C_COMPILER}")
-message(STATUS " Sources are in : ${CMAKE_CURRENT SOURCE_DIR}")
+message(STATUS " Sources are in : ${CMAKE_CURRENT_SOURCE_DIR}")
 message(STATUS " Project uses MPI : ${USE_MPI}")
 message(STATUS " Project uses HDF5 : ${HDF5_LIBRARIES}")
 message(STATUS " Project will be installed in ${CMAKE_INSTALL_PREFIX}")

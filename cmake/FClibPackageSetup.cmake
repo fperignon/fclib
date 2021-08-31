@@ -26,7 +26,8 @@ write_basic_package_version_file(
 if(NOT FCLIB_HEADER_ONLY)
 message("CREATE ${CMAKE_CURRENT_BINARY_DIR}/fclib-targets.cmake")
 
-
+get_property(result DIRECTORY PROPERTY BUILDSYSTEM_TARGETS )
+message("result is ${result}")
   export(EXPORT fclibTargets
     FILE "${CMAKE_CURRENT_BINARY_DIR}/fclib-targets.cmake"
     NAMESPACE FCLIB::
